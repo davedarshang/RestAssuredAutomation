@@ -45,7 +45,7 @@ public class RestAPIAutomation {
 		Assert.assertEquals(Statuscode, 201);
 	}
 	
-	@Test
+	//@Test
 	public void VerifyDeleteEndpoint(){
 		
 		RestAssured.baseURI = "http://localhost:3000/posts";
@@ -58,7 +58,7 @@ public class RestAPIAutomation {
 		Assert.assertEquals(Statuscode, 404);
 	}
 	
-	@Test
+	//@Test
 	public void VerifyPutEndpoint(){
 		
 		RestAssured.baseURI = "http://localhost:3000/posts";
