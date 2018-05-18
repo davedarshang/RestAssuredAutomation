@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2512" started-at="2018-05-17T12:03:18Z" finished-at="2018-05-17T12:03:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2512" started-at="2018-05-17T12:03:18Z" finished-at="2018-05-17T12:03:21Z">
+      <class name="API.RestAPIAutomation.tests.RestAPIAuto">
+        <test-method status="PASS" signature="testStatusCode()[pri:0, instance:API.RestAPIAutomation.tests.RestAPIAuto@3bfdc050]" name="testStatusCode" duration-ms="2477" started-at="2018-05-17T12:03:18Z" finished-at="2018-05-17T12:03:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCode -->
+      </class> <!-- API.RestAPIAutomation.tests.RestAPIAuto -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
