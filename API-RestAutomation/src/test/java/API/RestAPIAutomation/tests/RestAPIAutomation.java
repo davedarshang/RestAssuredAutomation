@@ -39,7 +39,9 @@ public class RestAPIAutomation {
 		int statusCode = response.getStatusCode();
 		Assert.assertEquals(statusCode /*actual value*/, 200 /*expected value*/, "Correct status code returned");
 	}
-	@Test
+	
+	//below test case - find the avatar tag value for id =1.
+	//@Test
 	public void verifyGroovyCommand()
 	{
 		RestAssured.baseURI = "https://reqres.in/api";   
@@ -49,13 +51,18 @@ public class RestAPIAutomation {
 		System.out.println(certainPlayer);
 		Assert.assertEquals(certainPlayer,"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg");
 	}
-	//@Test
+	
+	//below test case - find the author name and its length whose id =1.
+	@Test
 	public void extractSingleValueWithFind_findAPlayerWithACertainJerseyNumber()
 	{
 		RestAssured.baseURI = "http://localhost:3000/posts";   
 		Response response = RestAssured.get();
 		System.out.println(response.asString());
-		String certainPlayer = response.path("find { it.id == "+Integer.toString(6)+" }.author");
+		String certainPlayer = response.path("find { it.id == 1}.author");
+		int len=response.path("find { it.id == 1}.author.length()");
+
+		System.out.println(len);		
 		System.out.println(certainPlayer);
 	}
 
