@@ -2,9 +2,11 @@ package API.RestAPIAutomation.tests;
 
 import org.json.simple.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -16,7 +18,48 @@ public class RestAPIAutomation {
 	{
 		return rs.get(s);
 	}
+	
+    //@BeforeClass
+    /*public static void setupRestAssured() {
+        RestAssured.baseURI = "http://api.football-data.org";
+        RestAssured.basePath = "/v1/";
+        RequestSpecification requestSpecification = new RequestSpecBuilder().
+                addHeader("X-Auth-Token", "fze4b032141e23f453c22dbb2f78946b").
+                addHeader("X-Response-Control", "minified")
+                .build();
+        RestAssured.requestSpecification = requestSpecification;
+    }*/
+    
+	//@Test
+	public void VerifyStatusCode200()
+	{
+		RestAssured.baseURI = "http://api.football-data.org/v1/teams/66/fixtures";
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response = httpRequest.get();
+		int statusCode = response.getStatusCode();
+		Assert.assertEquals(statusCode /*actual value*/, 200 /*expected value*/, "Correct status code returned");
+	}
 	@Test
+	public void verifyGroovyCommand()
+	{
+		RestAssured.baseURI = "https://reqres.in/api";   
+		Response response = RestAssured.get("/users");
+		System.out.println(response.asString());
+		String certainPlayer = response.path("data.find { it.id == 1 }.avatar");		
+		System.out.println(certainPlayer);
+		Assert.assertEquals(certainPlayer,"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg");
+	}
+	//@Test
+	public void extractSingleValueWithFind_findAPlayerWithACertainJerseyNumber()
+	{
+		RestAssured.baseURI = "http://localhost:3000/posts";   
+		Response response = RestAssured.get();
+		System.out.println(response.asString());
+		String certainPlayer = response.path("find { it.id == "+Integer.toString(6)+" }.author");
+		System.out.println(certainPlayer);
+	}
+
+	//@Test
 	public void VerifyStatusCode_200()
 	{
 		RestAssured.baseURI = "http://localhost:3000/posts";

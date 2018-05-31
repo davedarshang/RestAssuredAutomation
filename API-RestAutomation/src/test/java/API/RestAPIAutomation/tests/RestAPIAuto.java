@@ -13,4 +13,13 @@ public class RestAPIAuto {
 			statusCode(200).
 			log().all();
 	}
+	
+	@Test
+	public void verifyGroovyCommand_BDD(){
+		given().
+			get("https://jsonplaceholder.typicode.com/posts/3").
+		then().
+			statusCode(200).
+			log().all();
+	}
 }
