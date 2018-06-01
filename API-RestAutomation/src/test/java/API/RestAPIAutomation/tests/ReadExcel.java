@@ -1,5 +1,5 @@
 package API.RestAPIAutomation.tests;
-import API.RestAPIAutomation.common.ExcelUtils;
+//import API.RestAPIAutomation.common;
 public class ReadExcel {
 
 	public static void main(String[] args) throws Exception {
@@ -12,7 +12,8 @@ public class ReadExcel {
     	int totalCol;
     	//Here we are passing the Excel path and SheetName to connect with the Excel file
         //This method was created in the last chapter of 'Set up Data Engine' 		
-    	API.RestAPIAutomation.common.ExcelUtils.setExcelFile(sPath, "Sheet1");
+    	
+    	/*API.RestAPIAutomation.common.ExcelUtils.setExcelFile(sPath, "Sheet1");
  
     	//Hard coded values are used for Excel row & columns for now
     	//In later chapters we will use these hard coded value much efficiently
@@ -32,6 +33,6 @@ public class ReadExcel {
 			//You will find this method below of the this test
 			//So this statement is doing nothing but calling that piece of code to execute
     		}
-    	}
+    	*/}
 	
 }
