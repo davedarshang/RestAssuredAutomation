@@ -111,6 +111,19 @@ public class RestAPIAuto {
 		}
 	}
 	
+	// Example of Cookies
+		@Test
+		public void testCookies1(){
+			
+			Response res=get("https://jsonplaceholder.typicode.com/posts");
+			
+			Map<String,String> cok=res.getCookies();
+			
+			for(Map.Entry<String, String> en:cok.entrySet()){
+				System.out.println(en.getKey()+" : "+en.getValue());
+			}
+		}
+		
 	// to get details of cookies
 	
 	@Test
